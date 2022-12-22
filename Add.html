@@ -172,13 +172,26 @@
           border-radius: 50%;
         }
         </style>
+        <style>
+            ouput{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px;
+          padding: 10px 0;
+        }
+        
+        .thumbnail {
+          height: 50px;
+        }
+          </style>
 </head>
 
 <body style=" background-color: rgba(0, 0, 0, 90);">
     <div style="display: flex; flex-direction: row; justify-content: center; background-color: rgba(45, 45, 45, 100);" >
      
         <div class="row1 " style="width: 100%; ">
-          <div class="" style=" width:28%;  ">
+          <div class="" style=" width:28%;  background-color: rgba(0, 0, 0, 90); ">
            
             <center><a class="navigation" style=" text-decoration: none; background-color: rgba(0, 0, 0, 70);   " href="index.html"><p style="color: white; padding-top: 10px; "> <img src="user.png" style="width: 23px;"alt="icone loading"><b >Users</b></p></a></center>
           </div>
@@ -221,8 +234,8 @@
                     <td>
                         
     
-                            <input type="file" id="filename" name="filename" 
-                                style="color: white; background-color: transparent; ">
+                        <input type="file" id="files" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
+                        <output>
                             
                     </td>
                 </tr>
@@ -302,5 +315,58 @@
       
 </script> -->
 
-
+<script>
+    document.querySelector("#files").addEventListener("change", (e) => { 
+  
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      // CODE TO PREVIEW IMAGE
+    } else {
+      alert("Your browser does not support File API");
+    }
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) { 
+      const files = e.target.files;
+      const output = document.querySelector("output");
+      output.innerHTML = "";  }
+    else {
+      alert("Your browser does not support File API");
+    }
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      const files = e.target.files;
+      const output = document.querySelector("output");
+      output.innerHTML = "";
+      for (let i = 0; i < files.length; i++) {
+         if (!files[i].type.match("image")) continue;
+      }
+    } else {
+      alert("Your browser does not support File API");
+    }
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      const files = e.target.files;
+      const output = document.querySelector("output");
+      output.innerHTML = "";
+      for (let i = 0; i < files.length; i++) {
+         if (!files[i].type.match("image")) continue;
+          const imgReader = new FileReader();
+          imgReader.addEventListener("load", function (event) {
+            const imgFile = event.target;
+            const img = document.createElement("img");
+            img.className = "thumbnail"
+            img.src = imgFile.result
+            output.appendChild(img);
+          });
+          imgReader.readAsDataURL(files[i]);
+         }
+    } else {
+      alert("Your browser does not support File API");
+    }
+  });
+  </script>
 </html>
