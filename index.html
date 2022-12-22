@@ -60,7 +60,7 @@
       }
    
 input[type=text]{
-  width: 67%;
+  width: 95%;
   background-color: transparent;
   color: silver;
  border-radius: 20px;
@@ -79,7 +79,77 @@ input[type=submit]{
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2))
 }
   </style>
-  </head>
+
+<style>
+  .container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  background-color: transparent;
+}
+
+form {
+  color: #555;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  /* margin: 0 0 30px; */
+}
+
+input[type="search"] {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+  color: #bbb;
+}
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 silver;
+  border-color: silver;
+  outline: none;
+}
+
+form.nosubmit {
+ border: none;
+ padding: 0;
+}
+
+input.nosubmit {
+  border: 1px solid rgb(204, 192, 192);
+  width: 100%;
+  padding: 9px 4px 9px 40px;
+   background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+
+</style>  </head>
 
 <body  style=" background-color: rgba(0,0,0,90);">
   <div style="display: flex; flex-direction: row; justify-content: center; background-color: rgba(45, 45, 45, 100);" >
@@ -105,24 +175,24 @@ input[type=submit]{
 </div>
  <div>
  
-    <div class="row1" style="width: 100%; background-color: rgba(0, 0, 0, 70);">
-      <form style="margin-top:5px ; margin-left: 8px;" >
-       
-        <input type="text" placeholder="Search"  >
-        
-
-      </form>
-      <div style="width: 35%; text-align: right;"> 
-        <a href="Add.html" class="add">
-          <button class="add" style="margin-top: 5px; margin-right: 8px; border: none; border-radius: 20px;">
-            Add user
-          </button>
+    <div class="row1" style="width: 100%; background-color: rgba(0, 0, 0, 70); margin-top: 5px; margin-left: 3px; ">
+      <div class="container1" style="background-color: rgba(50,50,50,900); width: 74%;">
+    
+        <form class="nosubmit">
+          <input class="nosubmit" type="search" style="color: whitesmoke;"placeholder="Search...">
+        </form>
+        </div>
+      <div style="width: 24%;" > 
+        <a href="Add.html"  class="add">
+          <center>
+            <i class="fa fa-plus"  style="color: white; padding-top: 10px; font-size: 22px;" aria-hidden="true"></i>
+          </center>
         </a>
       </div>
     </div>
     <center>
     <div class="" >
-      <div class="person" style="margin-top: 5px; background-color: rgba(0, 0, 0, 70);">
+      <div class="person" style="margin-top: 3px; background-color: rgba(0, 0, 0, 70);">
         <a  href="person.html"style="color:black; text-decoration: none;"> <div class="row1" >
           <div class="photo"style="margin-left:15px" >
               <img src="photo 1.jpg" style="padding: 5px;" height="75px "alt="image loading">
@@ -141,10 +211,12 @@ input[type=submit]{
             </div>
           </div>
       </div></a>
+      
     </div>
+    <div style="width: 85%; background-color: silver; height: 1px; margin: 3px;"></div>
     </div>
  <div class="">
-  <div class="person" style="margin-top: 5px; background-color: rgba(0, 0, 0, 0);">
+  <div class="person" style="margin-top: 3px; background-color: rgba(0, 0, 0, 0);">
     <a  href="person.html"style="color:black; text-decoration: none;"> <div class="row1" >
       <div class="photo"style="margin-left:15px" >
           <img src="photo 1.jpg" style="padding: 5px;" height="75px "alt="image loading">
@@ -165,6 +237,7 @@ input[type=submit]{
      
   </div></a>
 </div>
+<div style="width: 85%; background-color: silver; height: 1px; margin: 3px;"></div>
  </div>
  <div class="">
   <div class="person" style="margin-top: 5px; ">
@@ -187,6 +260,7 @@ input[type=submit]{
       </div>
   </div></a>
 </div>
+
  </div>
   
  
