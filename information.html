@@ -210,23 +210,79 @@
       </div>
     </div>
     <center>
-        <h3 style="color: silver;"> Update User</h3>
+        <h3 style="color: silver;"> Register to Users</h3>
         <div >
             <table style="margin-top: 20px;">
                 <form autocomplete="off">
                     <table>
                 
+              
                 <tr>
-                    <td style="color: silver; padding-left: 7px;">
-                        Name
+                    <td style="color: silver; width: 30%; padding-left: 7px;">
+                        <label>
+    
+                            Upload Image
+                        </label>
                     </td>
                     <td>
-                        <input type="text" name="contact"  id="contact">
-               
+                        
+    
+                        <input type="file" id="files" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
+                        <output style="margin-top: 2px; margin-left: 2px; margin-right: 2px;">
+                            
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: silver;  padding-left: 7px;">
+                        Accsess
+                    </td>
+                    <td>
+                        <label class="switch" style="background-color: transparent;">
+                            <input type="checkbox" checked>
+                            <span class="slider round" style="background-color: gray;  "></span>
+                          </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: silver;  padding-left: 7px;">
+                        Restricted
+                    </td>
+                    <td>
+                        <label class="switch" style="background-color: transparent;">
+                            <input type="checkbox" checked>
+                            <span class="slider round" style="background-color: gray;  "></span>
+                          </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: silver;  padding-left: 7px;">
+                        From
+                    </td>
+                    <td>
+                        <input type="date" name="from" id="from">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: silver;  padding-left: 7px;">
+                        Until
+                    </td>
+                    <td>
+                        <input type="date" name="until" id="until">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: silver;  padding-left: 7px;">
+                        Time
+                    </td>
+                    <td>
+                        <input type="time" name="time" id="time">
+    
+                    </td>
+                </tr>
             </table>
                <tr>
-                <div class=""   >
-                    <a style="text-decoration: none; color: silver;" href="editinfo.html"><p style=" margin-top: 5px;">Submit</p></a>
+                <div class="form-action-buttons"   >
+                    <input class="sub" type="submit" value="Submit">
                 </div>
                </tr>
             </form>
@@ -252,5 +308,58 @@
       
 </script> -->
 
-
+<script>
+    document.querySelector("#files").addEventListener("change", (e) => { 
+  
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      // CODE TO PREVIEW IMAGE
+    } else {
+      alert("Your browser does not support File API");
+    }
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) { 
+      const files = e.target.files;
+      const output = document.querySelector("output");
+      output.innerHTML = "";  }
+    else {
+      alert("Your browser does not support File API");
+    }
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      const files = e.target.files;
+      const output = document.querySelector("output");
+      output.innerHTML = "";
+      for (let i = 0; i < files.length; i++) {
+         if (!files[i].type.match("image")) continue;
+      }
+    } else {
+      alert("Your browser does not support File API");
+    }
+  });
+  document.querySelector("#files").addEventListener("change", (e) => { 
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      const files = e.target.files;
+      const output = document.querySelector("output");
+      output.innerHTML = "";
+      for (let i = 0; i < files.length; i++) {
+         if (!files[i].type.match("image")) continue;
+          const imgReader = new FileReader();
+          imgReader.addEventListener("load", function (event) {
+            const imgFile = event.target;
+            const img = document.createElement("img");
+            img.className = "thumbnail"
+            img.src = imgFile.result
+            output.appendChild(img);
+          });
+          imgReader.readAsDataURL(files[i]);
+         }
+    } else {
+      alert("Your browser does not support File API");
+    }
+  });
+  </script>
 </html>

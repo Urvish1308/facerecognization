@@ -1,108 +1,63 @@
-Skip to content
-Sign up
-exadel-inc
-/
-CompreFace
-Public
-Code
-Issues
-90
-Pull requests
-2
-Discussions
-Actions
-Security
-Insights
-CompreFace/docs/demos/tutorial_demo.html
-@pospielov
-pospielov fixed "How to Use CompreFace" tutorial, added demos
-Latest commit 069ef39 on May 23, 2021
- History
- 1 contributor
-70 lines (62 sloc)  2.24 KB
+</tr>
+<tr>
+    <td style="color: silver; width: 30%; padding-left: 7px;">
+        <label>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <script type="text/javascript">
-        function saveNewImageToFaceCollection(elem) {
-            let subject = encodeURIComponent(document.getElementById("subject").value);
-            let apiKey = document.getElementById("apiKey").value;
-            let formData = new FormData();
-            let photo = elem.files[0];
+            Upload Image
+        </label>
+    </td>
+    <td>
+        
 
-            formData.append("file", photo);
+        <input type="file" id="files" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
+        <output style="margin-top: 2px; margin-left: 2px; margin-right: 2px;">
+            
+    </td>
+</tr>
+<tr>
+    <td style="color: silver;  padding-left: 7px;">
+        Accsess
+    </td>
+    <td>
+        <label class="switch" style="background-color: transparent;">
+            <input type="checkbox" checked>
+            <span class="slider round" style="background-color: gray;  "></span>
+          </label>
+    </td>
+</tr>
+<tr>
+    <td style="color: silver;  padding-left: 7px;">
+        Restricted
+    </td>
+    <td>
+        <label class="switch" style="background-color: transparent;">
+            <input type="checkbox" checked>
+            <span class="slider round" style="background-color: gray;  "></span>
+          </label>
+    </td>
+</tr>
+<tr>
+    <td style="color: silver;  padding-left: 7px;">
+        From
+    </td>
+    <td>
+        <input type="date" name="from" id="from">
+    </td>
+</tr>
+<tr>
+    <td style="color: silver;  padding-left: 7px;">
+        Until
+    </td>
+    <td>
+        <input type="date" name="until" id="until">
+    </td>
+</tr>
+<tr>
+    <td style="color: silver;  padding-left: 7px;">
+        Time
+    </td>
+    <td>
+        <input type="time" name="time" id="time">
 
-            fetch('http://localhost:8000/api/v1/recognition/faces/?subject=' + subject,
-                {
-                    method: "POST",
-                    headers: {
-                        "x-api-key": apiKey
-                    },
-                    body: formData
-                }
-            ).then(r => r.json()).then(
-                function (data) {
-                    console.log('New example was saved', data);
-                })
-                .catch(function (error) {
-                    alert('Request failed: ' + JSON.stringify(error));
-                });
-        }
-
-        function recognizeFace(elem) {
-            let apiKey = document.getElementById("apiKey").value;
-            let formData = new FormData();
-            let photo = elem.files[0];
-
-            formData.append("file", photo);
-
-            fetch('http://localhost:8000/api/v1/recognition/recognize',
-                {
-                    method: "POST",
-                    headers: {
-                        "x-api-key": apiKey
-                    },
-                    body: formData
-                }
-            ).then(r => r.json()).then(
-                function (data) {
-                    document.getElementById("result").innerHTML = JSON.stringify(data);
-                })
-                .catch(function (error) {
-                    alert('Request failed: ' + JSON.stringify(error));
-                });
-        }
-    </script>
-    <title>test</title>
-</head>
-<body>
-
-<label for="apiKey">API key:</label><input id="apiKey" />
-<div></div>
-<label for="subject">Subject:</label><input id="subject" />
-<div>Click to add photo:</div>
-<input type=file id="newFace" onchange="saveNewImageToFaceCollection(this)" />
-<div>Click to recognize photo</div>
-<input type=file id="recognizeFace" onchange="recognizeFace(this)" />
-<div>Result:</div>
-<div id="result"></div>
-
-
-</body>
-</html>
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-CompreFace/tutorial_demo.html at master · exadel-inc/CompreFace · GitHub
+    </td>
+</tr>
