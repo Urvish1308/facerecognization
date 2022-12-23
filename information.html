@@ -214,7 +214,7 @@
     <center>
         <h3 style="color: silver;"> Register to Users</h3>
         <div >
-            <table style="margin-top: 20px;">
+            <table style="margin-top: 10px; width: 70%;">
                 <form autocomplete="off">
                     <table>
                 
@@ -223,7 +223,7 @@
                     <td style="color: silver; width: 30%; padding-left: 7px;">
                         <label>
     
-                            Upload Image
+                            Update Image
                         </label>
                     </td>
                     <td>
@@ -256,12 +256,48 @@
                           </label>
                     </td>
                 </tr>
+            
+    <tr>
+       <td colspan="2">
+        
+       <center style="color: silver;">
+        Date
+       </center>
+       </tr>
+       <tr  style="color: silver; padding-left: 7px;">
+        <td style="color: silver; width: 30%; padding-left: 7px;">
+            From
+        </td>
+        <td>
+            <input type="date" name="from" id="from">
+        </td>
+    </tr>
+    <tr>
+        <td style="color: silver;  padding-left: 7px;">
+            Until
+        </td>
+        <td>
+            <input type="date" name="until" id="until">
+        </td>
+    </tr>
+       </td>
+    
+    </tr>
+    <tr>
+    <td colspan="2">
+        
+      <center style="color: silver; margin-top: 10px;">
+       Time
+      </center>     
+    </tr>        
+              
                 <tr>
-                    <td style="color: silver;  padding-left: 7px;">
+                    <td style="color: silver; width: 30%; padding-left: 7px;">
                         From
                     </td>
                     <td>
-                        <input type="date" name="from" id="from">
+                        <input type="time" name="time" id="time">
+    
                     </td>
                 </tr>
                 <tr>
@@ -269,22 +305,15 @@
                         Until
                     </td>
                     <td>
-                        <input type="date" name="until" id="until">
-                    </td>
-                </tr>
-                <tr>
-                    <td style="color: silver;  padding-left: 7px;">
-                        Time
-                    </td>
-                    <td>
                         <input type="time" name="time" id="time">
     
                     </td>
                 </tr>
             </table>
+
                <tr>
-                <div class="form-action-buttons"    >
-                    <input class="sub" style="margin-top: 5px;" type="submit" value="Submit">
+                <div class="form-action-buttons"   >
+                    <input class="sub" type="submit"  style="margin-top: 9px; font-size: 18px;"  value="Submit">
                 </div>
                </tr>
             </form>
